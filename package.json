@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-comfyui-image-to-image-with-auth",
-  "version": "2.9.0",
+  "version": "2.10.0",
   "description": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, video generation, and audio generation using stable diffusion workflows",
   "keywords": [
     "n8n-community-node-package",

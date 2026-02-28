@@ -487,6 +487,7 @@ export class ComfyuiImageToVideo implements INodeType {
                     const videoResponse = await this.helpers.request({
                         method: 'GET',
                         url: videoOutput.url,
+						headers: headers.Authorization ? { 'Authorization': headers.Authorization } : {},
                         encoding: null,
                         resolveWithFullResponse: true
                     });

@@ -397,6 +397,7 @@ export class ComfyuiTextToAudio implements INodeType {
                     const audioResponse = await this.helpers.request({
                         method: 'GET',
                         url: audioOutput.url,
+						headers: headers.Authorization ? { 'Authorization': headers.Authorization } : {},
                         encoding: null,
                         resolveWithFullResponse: true
                     });

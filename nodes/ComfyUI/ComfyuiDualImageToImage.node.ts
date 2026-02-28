@@ -433,6 +433,7 @@ export class ComfyuiDualImageToImage implements INodeType {
                     const imageResponse = await this.helpers.request({
                         method: 'GET',
                         url: imageOutput.url,
+						headers: headers.Authorization ? { 'Authorization': headers.Authorization } : {},
                         encoding: null,
                         resolveWithFullResponse: true
                     });

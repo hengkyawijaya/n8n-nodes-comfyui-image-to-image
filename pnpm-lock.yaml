@@ -11,9 +11,6 @@ importers:
       form-data:
         specifier: ^4.0.0
         version: 4.0.0
-      n8n-nodes-comfyui-image-to-image-with-auth:
-        specifier: file:n8n-nodes-comfyui-image-to-image-with-auth-2.5.0.tgz
-        version: file:n8n-nodes-comfyui-image-to-image-with-auth-2.5.0.tgz(n8n-workflow@1.48.0)
     devDependencies:
       '@types/form-data':
         specifier: ^2.5.2
@@ -1313,13 +1310,6 @@ packages:
   mute-stdout@1.0.1:
     resolution: {integrity: sha512-kDcwXR4PS7caBpuRYYBUz9iVixUk3anO3f5OYFiIPwK/20vCzKCHyKoulbiDY1S53zD2bxUpxN/IJ+TnXjfvxg==}
     engines: {node: '>= 0.10'}
-
-  n8n-nodes-comfyui-image-to-image-with-auth@file:n8n-nodes-comfyui-image-to-image-with-auth-2.5.0.tgz:
-    resolution: {integrity: sha512-zSuTZPhczISUfiMKH4W2nSrI/cWCYSI5gZBlw26wJRiBq9L4C0MnK+FP0fczEe5Ro7+Y+oUIrXin9bu2qjtRVw==, tarball: file:n8n-nodes-comfyui-image-to-image-with-auth-2.5.0.tgz}
-    version: 2.5.0
-    engines: {node: '>=18.10', pnpm: '>=9.1'}
-    peerDependencies:
-      n8n-workflow: '*'
 
   n8n-workflow@1.48.0:
     resolution: {integrity: sha512-zHeOHhlf7BB2+DeAcm81+sJfmss8u/TE3KLpc/vCRc1vPonvF0iN5X5/DskHTGKPyXrP6N7wR6bkGWEXN7w08A==}
@@ -3508,11 +3498,6 @@ snapshots:
   ms@2.1.2: {}
 
   mute-stdout@1.0.1: {}
-
-  n8n-nodes-comfyui-image-to-image-with-auth@file:n8n-nodes-comfyui-image-to-image-with-auth-2.5.0.tgz(n8n-workflow@1.48.0):
-    dependencies:
-      form-data: 4.0.0
-      n8n-workflow: 1.48.0
 
   n8n-workflow@1.48.0:
     dependencies:

@@ -1,6 +1,6 @@
 {
-  "name": "n8n-nodes-comfyui-image-to-image",
-  "version": "2.2.0",
+  "name": "n8n-nodes-comfyui-image-to-image-with-auth",
+  "version": "2.5.0",
   "description": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, video generation, and audio generation using stable diffusion workflows",
   "keywords": [
     "n8n-community-node-package",
@@ -21,12 +21,12 @@
   "license": "MIT",
   "homepage": "",
   "author": {
-    "name": "christiankuri",
-    "email": "mintedwealth.es@gmail.com"
+    "name": "Hengky",
+    "email": "hengkytech@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StudioExitt/n8n-nodes-comfyui-image-to-image.git"
+    "url": "git+https://github.com/hengkyawijaya/n8n-nodes-comfyui-image-to-image.git"
   },
   "engines": {
     "node": ">=18.10",
@@ -73,6 +73,6 @@
   },
   "dependencies": {
     "form-data": "^4.0.0",
-    "n8n-nodes-comfyui-image-to-image": "file:n8n-nodes-comfyui-image-to-image-2.2.0.tgz"
+    "n8n-nodes-comfyui-image-to-image-with-auth": "file:n8n-nodes-comfyui-image-to-image-with-auth-2.5.0.tgz"
   }
 }

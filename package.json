@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-comfyui-image-to-image-with-auth",
-  "version": "2.11.0",
+  "version": "2.12.0",
   "description": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, video generation, and audio generation using stable diffusion workflows",
   "keywords": [
     "n8n-community-node-package",
@@ -52,9 +52,7 @@
     ],
     "nodes": [
       "dist/nodes/ComfyUI/ComfyuiImageToImage.node.js",
-      "dist/nodes/ComfyUI/ComfyuiDualImageToImage.node.js",
-      "dist/nodes/ComfyUI/ComfyuiImageToVideo.node.js",
-      "dist/nodes/ComfyUI/ComfyuiAudioGenerator.node.js"
+      "dist/nodes/ComfyUI/ComfyuiImageToVideo.node.js"
     ]
   },
   "devDependencies": {

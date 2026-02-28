@@ -1,5 +1,5 @@
 module.exports = {
-    packageName: 'n8n-nodes-comfyui-image-to-image',
+    packageName: 'n8n-nodes-comfyui-image-to-image-with-auth',
     productionOnly: true,
     nodeTypes: {
         "comfyuiImageToImage": {

@@ -276,18 +276,23 @@ export class ComfyuiImageToImage implements INodeType {
 			// Poll for completion
 			let attempts = 0;
 			const maxAttempts = 60 * timeout; // Convert minutes to seconds
+			let catchAttempts = 0;
+			const maxCatchAttempts = 10; // Max attempts to catch errors when fetching history
 			await new Promise(resolve => setTimeout(resolve, 5000));
 			while (attempts < maxAttempts) {
 				console.log(`[ComfyUI] Checking image generation status (attempt ${attempts + 1}/${maxAttempts})...`);
 				await new Promise(resolve => setTimeout(resolve, 1000));
 				attempts++;
 
-				const history = await this.helpers.request({
-					method: 'GET',
-					url: `${apiUrl}/history/${promptId}`,
-					headers,
-					json: true,
-				});
+				try {
+					const history = await this.helpers.request({
+						method: 'GET',
+						url: `${apiUrl}/history/${promptId}`,
+						headers,
+						json: true,
+					});
+
+					catchAttempts = 0; // Reset catch attempts on successful fetch
 
 				const promptResult = history[promptId];
 				if (!promptResult) {
@@ -375,6 +380,15 @@ export class ComfyuiImageToImage implements INodeType {
                             }
                         }
                     }]];
+				}
+
+				} catch (error) {
+					console.error('[ComfyUI] Error fetching prompt history:', error);
+					catchAttempts++;
+					if (catchAttempts >= maxCatchAttempts) {
+						throw new NodeApiError(this.getNode(), { message: `Failed to fetch prompt history after ${maxCatchAttempts} attempts: ${error.message}` });
+					}
+					continue; // Continue polling even if there's an error fetching history
 				}
 			}
 			throw new NodeApiError(this.getNode(), { message: `Image generation timeout after ${timeout} minutes` });
